@@ -2,51 +2,51 @@ import { map, mapVersionToDriver } from "./chromedriverVersionMapper";
 
 describe("mapVersionToDriver", () => {
   it("should map 71", () => {
-    expect(mapVersionToDriver(71)).toEqual("2.43");
+    expect(mapVersionToDriver("71")).toEqual("2.43");
   });
 
   it("should map 71", () => {
-    expect(mapVersionToDriver(70)).toEqual("2.43");
+    expect(mapVersionToDriver("70")).toEqual("2.43");
   });
 
   it("should map 71", () => {
-    expect(mapVersionToDriver(69)).toEqual("2.43");
+    expect(mapVersionToDriver("69")).toEqual("2.43");
   });
 
   it("should map 68", () => {
-    expect(mapVersionToDriver(68)).toEqual("2.42");
+    expect(mapVersionToDriver("68")).toEqual("2.42");
   });
 
   it("should map 67", () => {
-    expect(mapVersionToDriver(67)).toEqual("2.41");
+    expect(mapVersionToDriver("67")).toEqual("2.41");
   });
 
   it("should map 66", () => {
-    expect(mapVersionToDriver(66)).toEqual("2.40");
+    expect(mapVersionToDriver("66")).toEqual("2.40");
   });
 
   it("should map 65", () => {
-    expect(mapVersionToDriver(65)).toEqual("2.38");
+    expect(mapVersionToDriver("65")).toEqual("2.38");
   });
 
   it("should map 64", () => {
-    expect(mapVersionToDriver(64)).toEqual("2.37");
+    expect(mapVersionToDriver("64")).toEqual("2.37");
   });
 
   it("should map 63", () => {
-    expect(mapVersionToDriver(63)).toEqual("2.36");
+    expect(mapVersionToDriver("63")).toEqual("2.36");
   });
 
   it("should map 62", () => {
-    expect(mapVersionToDriver(62)).toEqual("2.35");
+    expect(mapVersionToDriver("62")).toEqual("2.35");
   });
 
   it("should map 61", () => {
-    expect(mapVersionToDriver(61)).toEqual("2.34");
+    expect(mapVersionToDriver("61")).toEqual("2.34");
   });
 
   it("should map 60", () => {
-    expect(mapVersionToDriver(60)).toEqual("2.33");
+    expect(mapVersionToDriver("60")).toEqual("2.33");
   });
 });
 

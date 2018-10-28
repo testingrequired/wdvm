@@ -9,7 +9,7 @@ export default (url: string, name: string): Promise<string> => {
     const file = fs.createWriteStream(downloadPath);
     https.get(url, response => {
       if (response.statusCode && response.statusCode > 300) {
-        return reject(`Response code ${response.statusCode}`);
+        return reject(`Response code ${response.statusCode}: ${url}`);
       }
 
       response.pipe(file);
