@@ -1,4 +1,5 @@
 import { handler as chrome } from "./chrome";
+import { handler as firefox } from "./firefox";
 
 type Handler = (
   browserVersion: string,
@@ -6,7 +7,8 @@ type Handler = (
 ) => [string, string, string];
 
 const handlers: { [index: string]: Handler } = {
-  chrome
+  chrome,
+  firefox
 };
 
 export default handlers;
