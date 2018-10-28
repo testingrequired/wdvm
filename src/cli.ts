@@ -12,9 +12,17 @@ const main = (pkg: any, args: string[]) => {
   console.log(`wdvm ${pkg.version}`);
   console.log(`Using ${browser} v${version}`);
 
+  validateBrowser(browser);
+
   const handler = handlers[browser];
 
   handler(version, arch).then(result => console.log(result));
 };
 
 main(require("../package.json"), process.argv.slice(2));
+
+function validateBrowser(browser: string) {
+  if (!Object.keys(handlers).includes(browser)) {
+    throw new Error(`Unsupported browser: ${browser}`);
+  }
+}
