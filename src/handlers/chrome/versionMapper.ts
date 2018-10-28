@@ -27,7 +27,7 @@ export const minSupportedBrowserVersion = supportedBrowserVersions[0];
 export const maxSupportedBrowserVersion =
   supportedBrowserVersions[supportedBrowserVersions.length - 1];
 
-export const supportedArch = ["win32", "mac64", "linux64"];
+export const supportedPlatforms = ["win32", "mac64", "linux64"];
 
 export const mapVersionToDriver = (browserVersionString: string) =>
   Array.from(versionMap.entries()).reduce((acc: any, item: any): string => {

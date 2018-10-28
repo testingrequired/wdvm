@@ -3,33 +3,33 @@ import {
   supportedBrowserVersions,
   minSupportedBrowserVersion,
   maxSupportedBrowserVersion,
-  supportedArch
+  supportedPlatforms
 } from "./versionMapper";
 
 export const handler = (
   browserVersion: string,
-  arch: string
+  platform: string
 ): [string, string, string] => {
   validateBrowserVersion(browserVersion);
-  validateArch(arch);
+  validatePlatform(platform);
 
   const webdriverVersion = mapVersionToDriver(browserVersion);
-  const url = getWebdriverUrl(webdriverVersion, arch);
-  const filename = getDownloadFilename(arch, webdriverVersion);
+  const url = getWebdriverUrl(webdriverVersion, platform);
+  const filename = getDownloadFilename(platform, webdriverVersion);
   return [webdriverVersion, url, filename];
 };
 
-function getDownloadFilename(arch: string, webdriverVersion: string) {
-  return `chromedriver_${arch}_${webdriverVersion}.zip`;
+function getDownloadFilename(platform: string, webdriverVersion: string) {
+  return `chromedriver_${platform}_${webdriverVersion}.zip`;
 }
 
-function getWebdriverUrl(webdriverVersion: string, arch: string) {
-  return `https://chromedriver.storage.googleapis.com/${webdriverVersion}/chromedriver_${arch}.zip`;
+function getWebdriverUrl(webdriverVersion: string, paltform: string) {
+  return `https://chromedriver.storage.googleapis.com/${webdriverVersion}/chromedriver_${paltform}.zip`;
 }
 
-function validateArch(arch: string) {
-  if (!supportedArch.includes(arch)) {
-    const message = `Invalid chrome arch: ${arch} -- supported: ${supportedArch.join(
+function validatePlatform(platform: string) {
+  if (!supportedPlatforms.includes(platform)) {
+    const message = `Invalid chrome platform: ${platform} -- supported: ${supportedPlatforms.join(
       ", "
     )}`;
     throw new Error(message);

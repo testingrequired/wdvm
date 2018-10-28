@@ -3,39 +3,39 @@ import {
   supportedBrowserVersions,
   minSupportedBrowserVersion,
   maxSupportedBrowserVersion,
-  supportedArch
+  supportedPlatforms
 } from "./versionMapper";
 
 export const handler = (
   browserVersion: string,
-  arch: string
+  platform: string
 ): [string, string, string] => {
   validateBrowserVersion(browserVersion);
-  validateArch(arch);
+  validatePlatform(platform);
 
   const webdriverVersion = mapVersionToDriver(browserVersion);
-  const url = getWebdriverUrl(webdriverVersion, arch);
-  const filename = getDownloadFilename(arch, webdriverVersion);
+  const url = getWebdriverUrl(webdriverVersion, platform);
+  const filename = getDownloadFilename(platform, webdriverVersion);
   return [webdriverVersion, url, filename];
 };
 
-function getExtension(arch: string) {
-  return arch.startsWith("win") ? ".zip" : ".tar.gz";
+function getExtension(platform: string) {
+  return platform.startsWith("win") ? ".zip" : ".tar.gz";
 }
 
-function getDownloadFilename(arch: string, webdriverVersion: string) {
-  const ext = getExtension(arch);
-  return `geckodriver-v${webdriverVersion}-${arch}${ext}`;
+function getDownloadFilename(platform: string, webdriverVersion: string) {
+  const ext = getExtension(platform);
+  return `geckodriver-v${webdriverVersion}-${platform}${ext}`;
 }
 
-function getWebdriverUrl(webdriverVersion: string, arch: string) {
-  const ext = getExtension(arch);
-  return `https://github.com/mozilla/geckodriver/releases/download/v${webdriverVersion}/geckodriver-v${webdriverVersion}-${arch}${ext}`;
+function getWebdriverUrl(webdriverVersion: string, platform: string) {
+  const ext = getExtension(platform);
+  return `https://github.com/mozilla/geckodriver/releases/download/v${webdriverVersion}/geckodriver-v${webdriverVersion}-${platform}${ext}`;
 }
 
-function validateArch(arch: string) {
-  if (!supportedArch.includes(arch)) {
-    const message = `Invalid firefox arch: ${arch} -- supported: ${supportedArch.join(
+function validatePlatform(platform: string) {
+  if (!supportedPlatforms.includes(platform)) {
+    const message = `Invalid firefox platform: ${platform} -- supported: ${supportedPlatforms.join(
       ", "
     )}`;
     throw new Error(message);

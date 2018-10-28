@@ -26,7 +26,7 @@ export const minSupportedBrowserVersion = supportedBrowserVersions[0];
 export const maxSupportedBrowserVersion =
   supportedBrowserVersions[supportedBrowserVersions.length - 1];
 
-export const supportedArch = [
+export const supportedPlatforms = [
   "win32",
   "win64",
   "macos",

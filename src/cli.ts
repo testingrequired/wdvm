@@ -6,18 +6,21 @@ import webdriverInstaller from "./webdriverInstaller";
 import loadConfig from "./loadConfig";
 
 const main = (pkg: any, args: string[]) => {
-  const [browser, version, arch] = args;
+  const [browser, version, platform] = args;
 
   console.log(`wdvm ${pkg.version}`);
 
   validateBrowser(browser);
   validateVersion(version);
 
-  console.log(`Using ${browser} v${version} on ${arch}`);
+  console.log(`Using ${browser} v${version} on ${platform}`);
 
   const config = loadConfig();
 
-  const [webdriverVersion, url, filename] = handlers[browser](version, arch);
+  const [webdriverVersion, url, filename] = handlers[browser](
+    version,
+    platform
+  );
 
   console.log(`Requires ${browser} webdriver version: ${webdriverVersion}`);
   console.log(`Downloading ${url}...`);
