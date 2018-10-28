@@ -13,7 +13,7 @@ const main = (pkg: any, args: string[]) => {
   const [webdriverVersion, url, filename] = handlers[browser](version, arch);
 
   console.log(`Requires ${browser} webdriver version: ${webdriverVersion}`);
-  console.log(`Downloading ${filename}...`);
+  console.log(`Downloading ${url}...`);
 
   webdriverDownloader(url, filename)
     .then(logDownloadPath)
