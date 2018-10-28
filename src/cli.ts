@@ -1,6 +1,7 @@
 import handlers from "./handlers";
 import webdriverDownloader from "./webdriverDownloader";
 import webdriverInstaller from "./webdriverInstaller";
+import loadConfig from "./loadConfig";
 
 const main = (pkg: any, args: string[]) => {
   const [browser, version, arch] = args;
@@ -11,6 +12,8 @@ const main = (pkg: any, args: string[]) => {
   validateVersion(version);
 
   console.log(`Using ${browser} v${version} on ${arch}`);
+
+  const config = loadConfig();
 
   const [webdriverVersion, url, filename] = handlers[browser](version, arch);
 
