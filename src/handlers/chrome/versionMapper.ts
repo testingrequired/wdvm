@@ -1,18 +1,18 @@
-export const map = new Map<string, Array<number>>();
+export const versionMap = new Map<string, Array<number>>();
 
-map.set("2.43", [69, 71]);
-map.set("2.42", [68, 70]);
-map.set("2.41", [67, 69]);
-map.set("2.40", [66, 68]);
-map.set("2.39", [66, 68]);
-map.set("2.38", [65, 67]);
-map.set("2.37", [64, 66]);
-map.set("2.36", [63, 65]);
-map.set("2.35", [62, 64]);
-map.set("2.34", [61, 63]);
-map.set("2.33", [60, 62]);
+versionMap.set("2.43", [69, 71]);
+versionMap.set("2.42", [68, 70]);
+versionMap.set("2.41", [67, 69]);
+versionMap.set("2.40", [66, 68]);
+versionMap.set("2.39", [66, 68]);
+versionMap.set("2.38", [65, 67]);
+versionMap.set("2.37", [64, 66]);
+versionMap.set("2.36", [63, 65]);
+versionMap.set("2.35", [62, 64]);
+versionMap.set("2.34", [61, 63]);
+versionMap.set("2.33", [60, 62]);
 
-export const supportedBrowserVersions = Array.from(map.values())
+export const supportedBrowserVersions = Array.from(versionMap.values())
   .reduce((acc: number[], item: number[]): number[] => {
     const [min, max] = item;
     const updates = [];
@@ -30,7 +30,7 @@ export const maxSupportedBrowserVersion =
 export const supportedArch = ["win32", "mac64", "linux64"];
 
 export const mapVersionToDriver = (browserVersionString: string) =>
-  Array.from(map.entries()).reduce((acc: any, item: any): string => {
+  Array.from(versionMap.entries()).reduce((acc: any, item: any): string => {
     const [driverVersion, browserVersions] = item;
     const [min, max] = browserVersions;
     const driverVersionFloat = parseFloat(driverVersion);

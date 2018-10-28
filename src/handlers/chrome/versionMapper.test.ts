@@ -1,4 +1,4 @@
-import { map, mapVersionToDriver } from "./chromedriverVersionMapper";
+import { versionMap, mapVersionToDriver } from "./versionMapper";
 
 describe("mapVersionToDriver", () => {
   it("should map 71", () => {
@@ -53,67 +53,67 @@ describe("mapVersionToDriver", () => {
 describe("map", () => {
   describe("2.43", () => {
     it("should have correct range", () => {
-      expect(map.get("2.43")).toEqual([69, 71]);
+      expect(versionMap.get("2.43")).toEqual([69, 71]);
     });
   });
 
   describe("2.42", () => {
     it("should have correct range", () => {
-      expect(map.get("2.42")).toEqual([68, 70]);
+      expect(versionMap.get("2.42")).toEqual([68, 70]);
     });
   });
 
   describe("2.41", () => {
     it("should have correct range", () => {
-      expect(map.get("2.41")).toEqual([67, 69]);
+      expect(versionMap.get("2.41")).toEqual([67, 69]);
     });
   });
 
   describe("2.40", () => {
     it("should have correct range", () => {
-      expect(map.get("2.40")).toEqual([66, 68]);
+      expect(versionMap.get("2.40")).toEqual([66, 68]);
     });
   });
 
   describe("2.39", () => {
     it("should have correct range", () => {
-      expect(map.get("2.39")).toEqual([66, 68]);
+      expect(versionMap.get("2.39")).toEqual([66, 68]);
     });
   });
 
   describe("2.38", () => {
     it("should have correct range", () => {
-      expect(map.get("2.38")).toEqual([65, 67]);
+      expect(versionMap.get("2.38")).toEqual([65, 67]);
     });
   });
 
   describe("2.37", () => {
     it("should have correct range", () => {
-      expect(map.get("2.37")).toEqual([64, 66]);
+      expect(versionMap.get("2.37")).toEqual([64, 66]);
     });
   });
 
   describe("2.36", () => {
     it("should have correct range", () => {
-      expect(map.get("2.36")).toEqual([63, 65]);
+      expect(versionMap.get("2.36")).toEqual([63, 65]);
     });
   });
 
   describe("2.35", () => {
     it("should have correct range", () => {
-      expect(map.get("2.35")).toEqual([62, 64]);
+      expect(versionMap.get("2.35")).toEqual([62, 64]);
     });
   });
 
   describe("2.34", () => {
     it("should have correct range", () => {
-      expect(map.get("2.34")).toEqual([61, 63]);
+      expect(versionMap.get("2.34")).toEqual([61, 63]);
     });
   });
 
   describe("2.33", () => {
     it("should have correct range", () => {
-      expect(map.get("2.33")).toEqual([60, 62]);
+      expect(versionMap.get("2.33")).toEqual([60, 62]);
     });
   });
 });
