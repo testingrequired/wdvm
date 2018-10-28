@@ -1,4 +1,41 @@
-import { versionMap, mapVersionToDriver } from "./versionMapper";
+import {
+  versionMap,
+  mapVersionToDriver,
+  minSupportedBrowserVersion,
+  maxSupportedBrowserVersion,
+  supportedBrowserVersions
+} from "./versionMapper";
+
+describe("minSupportedBrowserVersion", () => {
+  it("should be 60", () => {
+    expect(minSupportedBrowserVersion).toBe("60");
+  });
+});
+
+describe("maxSupportedBrowserVersion", () => {
+  it("should be 71", () => {
+    expect(maxSupportedBrowserVersion).toBe("71");
+  });
+});
+
+describe("supportedBrowserVersions", () => {
+  it("should include range from min to max", () => {
+    expect(supportedBrowserVersions).toEqual([
+      "60",
+      "61",
+      "62",
+      "63",
+      "64",
+      "65",
+      "66",
+      "67",
+      "68",
+      "69",
+      "70",
+      "71"
+    ]);
+  });
+});
 
 describe("mapVersionToDriver", () => {
   it("should map 71", () => {
