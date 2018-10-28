@@ -20,7 +20,19 @@ describe("maxSupportedBrowserVersion", () => {
 
 describe("supportedBrowserVersions", () => {
   it("should include range from min to max", () => {
-    expect(supportedBrowserVersions).toEqual(["52", "53", "55", "57", "62"]);
+    expect(supportedBrowserVersions).toEqual([
+      "52",
+      "53",
+      "54",
+      "55",
+      "56",
+      "57",
+      "58",
+      "59",
+      "60",
+      "61",
+      "62"
+    ]);
   });
 });
 
@@ -29,12 +41,36 @@ describe("mapVersionToDriver", () => {
     expect(mapVersionToDriver("62")).toEqual("0.23.0");
   });
 
+  it("should map 61", () => {
+    expect(mapVersionToDriver("61")).toEqual("0.23.0");
+  });
+
+  it("should map 60", () => {
+    expect(mapVersionToDriver("60")).toEqual("0.23.0");
+  });
+
+  it("should map 59", () => {
+    expect(mapVersionToDriver("59")).toEqual("0.23.0");
+  });
+
+  it("should map 58", () => {
+    expect(mapVersionToDriver("58")).toEqual("0.23.0");
+  });
+
   it("should map 57", () => {
     expect(mapVersionToDriver("57")).toEqual("0.23.0");
   });
 
+  it("should map 56", () => {
+    expect(mapVersionToDriver("56")).toEqual("0.20.1");
+  });
+
   it("should map 55", () => {
     expect(mapVersionToDriver("55")).toEqual("0.20.1");
+  });
+
+  it("should map 54", () => {
+    expect(mapVersionToDriver("54")).toEqual("0.18.0");
   });
 
   it("should map 53", () => {

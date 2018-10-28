@@ -1,3 +1,5 @@
+import range from "../../utils/range";
+
 export const versionMap = new Map<string, Array<number>>();
 
 versionMap.set("0.23.0", [57, 62]);
@@ -13,10 +15,9 @@ versionMap.set("0.17.0", [52, 62]);
 export const supportedBrowserVersions = Array.from(versionMap.values())
   .reduce((acc: number[], item: number[]): number[] => {
     const [min, max] = item;
-    const updates = [];
-    if (!acc.includes(min)) updates.push(min);
-    if (!acc.includes(max)) updates.push(max);
-    return [...acc, ...updates];
+    const set = new Set(acc);
+    range(min, max).forEach(i => set.add(i));
+    return Array.from(set);
   }, [])
   .sort()
   .map(value => value.toString());
