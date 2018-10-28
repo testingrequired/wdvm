@@ -1,4 +1,3 @@
-import webdriverDownloader from "../../webdriverDownloader";
 import {
   mapVersionToDriver,
   supportedBrowserVersions,
@@ -7,7 +6,7 @@ import {
   supportedArch
 } from "./versionMapper";
 
-export default (
+export const handler = (
   browserVersion: string,
   arch: string
 ): [string, string, string] => {
