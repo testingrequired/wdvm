@@ -7,15 +7,17 @@ import {
   supportedArch
 } from "./versionMapper";
 
-export default (browserVersion: string, arch: string): Promise<string> => {
+export default (
+  browserVersion: string,
+  arch: string
+): [string, string, string] => {
   validateBrowserVersion(browserVersion);
   validateArch(arch);
 
   const webdriverVersion = mapVersionToDriver(browserVersion);
   const url = getWebdriverUrl(webdriverVersion, arch);
   const filename = getDownloadFilename(arch, webdriverVersion);
-  const result = webdriverDownloader(url, filename);
-  return result;
+  return [webdriverVersion, url, filename];
 };
 
 function getDownloadFilename(arch: string, webdriverVersion: string) {
