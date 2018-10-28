@@ -6,9 +6,11 @@ const main = (pkg: any, args: string[]) => {
   const [browser, version, arch] = args;
 
   console.log(`wdvm ${pkg.version}`);
-  console.log(`Using ${browser} v${version} on ${arch}`);
 
   validateBrowser(browser);
+  validateVersion(version);
+
+  console.log(`Using ${browser} v${version} on ${arch}`);
 
   const [webdriverVersion, url, filename] = handlers[browser](version, arch);
 
@@ -29,7 +31,17 @@ function logDownloadPath(downloadPath: string) {
 }
 
 function validateBrowser(browser: string) {
+  if (typeof browser === "undefined") {
+    throw new Error("Browser must be defined");
+  }
+
   if (!Object.keys(handlers).includes(browser)) {
     throw new Error(`Unsupported browser: ${browser}`);
+  }
+}
+
+function validateVersion(version: string) {
+  if (typeof version === "undefined") {
+    throw new Error("Browser version must be defined");
   }
 }
