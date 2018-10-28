@@ -4,9 +4,9 @@ import path from "path";
 import unzip from "unzip";
 let targz = require("targz");
 
-export default (downloadPath: string) => {
-  const dest = path.resolve(os.homedir(), ".wdvm");
-
+export default (dest: string = path.resolve(os.homedir(), ".wdvm")) => (
+  downloadPath: string
+) => {
   console.log(`Installing to ${dest}...`);
 
   if (downloadPath.endsWith(".zip")) {

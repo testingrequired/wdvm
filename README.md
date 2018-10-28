@@ -23,8 +23,18 @@ $ wdvm browser version platform
 $ wdvm chrome 71 win32
 ```
 
-## Install directory
+## Configuration
 
+Configuration can be defined in `~/.wdvmrc.json`
+
+### `dest`
+
+Absolute paths to where the webdriver binaries are installed.
+
+```json
+{
+  "dest": ""
+}
 ```
-$ ls ~/.wdvm
-```
+
+Defaults to: `~/.wdvm`

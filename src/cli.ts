@@ -27,7 +27,7 @@ const main = (pkg: any, args: string[]) => {
 
   webdriverDownloader(url, filename)
     .then(logDownloadPath)
-    .then(webdriverInstaller)
+    .then(webdriverInstaller(config.dest))
     .catch(e => console.log(`Error: ${e}`));
 };
 
