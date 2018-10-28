@@ -25,8 +25,8 @@ export default (downloadPath: string) => {
         src: downloadPath,
         dest
       },
-      (err: any) => {
-        throw new Error(err);
+      err => {
+        if (err) throw new Error(err);
       }
     );
   }
