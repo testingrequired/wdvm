@@ -4,11 +4,23 @@
 
 1. Clone this repo locally
 1. Run `$ npm install && npm link`
+1. Add `~/.wdvm` to PATH
 
 ## Usage
 
 ```bash
-$ wdvm firefox 62 win32
+$ wdvm browser version platform
+```
+
+### Supported Browsers
+
+- `chrome`
+- `firefox`
+
+### Examples
+
+```bash
+$ wdvm chrome 71 win32
 ```
 
 ## Install directory
