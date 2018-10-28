@@ -7,13 +7,13 @@ import {
 } from "./versionMapper";
 
 describe("minSupportedBrowserVersion", () => {
-  it("should be 60", () => {
+  it("should be 52", () => {
     expect(minSupportedBrowserVersion).toBe("52");
   });
 });
 
 describe("maxSupportedBrowserVersion", () => {
-  it("should be 71", () => {
+  it("should be 62", () => {
     expect(maxSupportedBrowserVersion).toBe("62");
   });
 });
@@ -25,23 +25,23 @@ describe("supportedBrowserVersions", () => {
 });
 
 describe("mapVersionToDriver", () => {
-  it("should map 71", () => {
+  it("should map 62", () => {
     expect(mapVersionToDriver("62")).toEqual("0.23.0");
   });
 
-  it("should map 71", () => {
+  it("should map 57", () => {
     expect(mapVersionToDriver("57")).toEqual("0.23.0");
   });
 
-  it("should map 71", () => {
+  it("should map 55", () => {
     expect(mapVersionToDriver("55")).toEqual("0.20.1");
   });
 
-  it("should map 68", () => {
+  it("should map 53", () => {
     expect(mapVersionToDriver("53")).toEqual("0.18.0");
   });
 
-  it("should map 67", () => {
+  it("should map 52", () => {
     expect(mapVersionToDriver("52")).toEqual("0.17.0");
   });
 });
