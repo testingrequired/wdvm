@@ -9,8 +9,15 @@
     "build": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "preinstall": "npm run build",
     "cli": "npm run build && node ./lib/cli.js"
   },
+  "bin": {
+    "wdvm": "./lib/cli.js"
+  },
+  "files": [
+    "lib/*.*/*.js"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",

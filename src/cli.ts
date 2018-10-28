@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import handlers from "./handlers";
 import webdriverDownloader from "./webdriverDownloader";
 import webdriverInstaller from "./webdriverInstaller";
